@@ -2,7 +2,7 @@ module.exports = function (express){
 var router = express.Router();
 
 router.post('/v1/:url', function(req, res){  //post runs this function which is activated on this route /v1/:url  
-		//
+		
 		
 				function makeid() // random 5 digit string generater
 		{
@@ -16,10 +16,9 @@ router.post('/v1/:url', function(req, res){  //post runs this function which is 
 		}
 
 
-		var shortUrl = makeid();  //generate new random 5 digit string
-		var longUrl = req.params.url
-		
-		res.json({url: shortUrl }); //respond with json format with new generated random string
+		var shortUrl = makeid();  //generate new random 5 digit string, and assign it to shortUrl var
+		req.body = {long_url : req.params.url, short_url: shortUrl }
+		res.json(req.body.short_url); //respond with json format with new generated random string
 	});
 
 return router;
