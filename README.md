@@ -13,7 +13,7 @@ URL-Shortener will allow you to take a long url and shorten it into a smaller 5 
 * Get [npm](https://www.npmjs.com/package/npm) to install your dependencies, In your CLI run the following command to install npm: 
 	* ``` curl -L https://www.npmjs.com/install.sh | sh  ```
 
-## **URL-Shortener Dependencies 
+## URL-Shortener Dependencies 
 
 ``` npm install ```
 
@@ -33,6 +33,6 @@ Your CLI should give you the message indicating you are connected:
 
 Use each method by Entering these URL endpoints in your search bar:
 
-Method | URL Path | Result
------- | -------- | ------
-POST | /api/v1/(url entered here) | Generates shortened url 
+Method | URL Path | Instructions | Result
+------ | -------- | -------------| ------
+POST | /api/v1/urls | Use POST at this endpoint to send JSON object containing your Url you wish to shorten ex. {"Url": "http://apple.com"} | Generates shortened url 
