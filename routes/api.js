@@ -19,7 +19,7 @@ router.post('/v1/urls', function(req, res){  //post runs this function which is 
 		req.body.shortUrl = makeid();  //generate new random 5 digit string, and assign it to shortUrl var
 		//req.body = {long_url : req.params.url, short_url: shortUrl }
 		console.log(req.body);
-		res.json(req.body.shortUrl); //respond with json format with new generated random string
+		res.json(req.body); //respond with json format with new generated random string
 	});
 
 return router;

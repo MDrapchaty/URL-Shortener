@@ -33,6 +33,9 @@ Your CLI should give you the message indicating you are connected:
 
 Use each method by Entering these URL endpoints in your search bar:
 
-Method | URL Path | Instructions | Result
+Method | Endpoint | Instructions | Result
 ------ | -------- | -------------| ------
-POST | /api/v1/urls | Use POST at this endpoint to send JSON object containing your Url you wish to shorten ex. {"Url": "http://apple.com"} | Generates shortened url 
+POST | /api/v1/urls | Use POST at this endpoint to send JSON object containing your Url you wish to shorten ex. {"Url": "http://apple.com"} | Generates shortened url ex. {
+  "Url": "http://apple.com",
+  "shortUrl": "Dee8s"
+}
