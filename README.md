@@ -1,4 +1,4 @@
-**URL-Shortener**
+# **URL-Shortener**
 
 This documentation will help you use the url shortener application, created with nodejs and express by Matt Drapchaty.
 
