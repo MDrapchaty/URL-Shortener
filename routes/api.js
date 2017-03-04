@@ -1,10 +1,17 @@
 module.exports = function (express){
 var router = express.Router();
+const url = require('../models/url');
+
+
+//   ROUTES   //  
+
+
+// POST - Create a shortened url
 
 router.post('/v1/urls', function(req, res){  //post runs this function which is activated on this route /v1/:url  
 		
 		
-				function makeid() // random 5 digit string generater
+		function makeid() // random 5 digit string generater
 		{
 		    var text = '';
 		    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";  //string containing every possible character for short url
@@ -15,12 +22,25 @@ router.post('/v1/urls', function(req, res){  //post runs this function which is 
 		    return text;
 		}
 
-
 		req.body.shortUrl = makeid();  //generate new random 5 digit string, and assign it to shortUrl var
-		//req.body = {long_url : req.params.url, short_url: shortUrl }
 		console.log(req.body);
-		res.json(req.body); //respond with json format with new generated random string
+		url.create(req.body, (err) => {
+			res.status(500).json(err);
+		}, (data) => {
+			res.status(200).json(data);
+		});
 	});
+		
+
+//Display all urls
+
+router.get('/v1/urls', (req, res) => {
+    url.findAll((err) => {
+      res.status(500).json(err);
+    }, (data) => {
+      res.status(200).json(data);
+    });
+  });
 
 return router;
 }

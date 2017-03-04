@@ -2,6 +2,9 @@ const Sequelize = require('sequelize');
 
 require('dotenv').config();
 
+
+// Connect to a db
+
 const sequelize = new Sequelize(
   process.env.DB_NAME,
   process.env.DB_USER,
@@ -18,6 +21,9 @@ const sequelize = new Sequelize(
     
     logging: false,
   });
+
+
+//Defining a model 
 
 const url = sequelize.define('urls',{
 	Url: {
