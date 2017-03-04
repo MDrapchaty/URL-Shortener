@@ -23,7 +23,7 @@ URL-Shortener will allow you to take a long url and shorten it into a smaller 5 
 
 Traverse to URL-Shortener in your CLI and run the following:
 
-```node src/server.js```
+```node server.js```
 
 Your CLI should give you the message indicating you are connected:
 
