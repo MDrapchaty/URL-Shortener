@@ -44,3 +44,14 @@ exports.destroy = (payload, err, success) => {
   }).then(success).catch(err);
 };
 
+//Find Original url
+exports.getUrl = (data, error, success) => {
+  // find url based on short url
+  db.url.find({    // Find a URL based on the short URL from data.
+    where: {
+      shortURL: data.shortURL,
+    },
+  })
+  .then(success)    // If successful run success.
+  .catch(error);    // If failed run error.
+}; 
