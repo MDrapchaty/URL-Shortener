@@ -40,6 +40,6 @@ Use each method by Entering these URL endpoints in your search bar:
 Method | Endpoint | Instructions | Result
 ------ | -------- | -------------| ------
 POST | /api/v1/urls | POST at this endpoint to send JSON object containing your Url you wish to shorten ex. {"Url": "http://apple.com"} | Generates shortened url ex. {"Url": "http://apple.com", "shortUrl": "Dee8s"}
-GET | /api/v1/urls | Displays all urls in database | Displays all urls in database ex. {"id":2,"Url":"http://google.com","shortUrl":"DPYZk","createdAt":"2017-03-04T04:29:22.000Z","updatedAt":"2017-03-04T06:50:56.000Z"}
-GET | /api/v1/urls/:id | Enter the id of the url you wish to retreive in the `:id` parameter | ex. http://localhost:3000/api/v1/urls/3 will retrieve {"id":3,"Url":"http://bannanas.com","shortUrl":"rOoPx","createdAt":"2017-03-04T05:54:09.000Z","updatedAt":"2017-03-04T06:48:18.000Z"}
+GET | /api/v1/urls | Displays all urls in database | Displays all urls in database ex. {"id":2,"Url":"http://google.com", "shortUrl":"DPYZk", "createdAt":"2017-03-04T04:29:22.000Z", "updatedAt":"2017-03-04T06:50:56.000Z"}
+GET | /api/v1/urls/:id | Enter the id of the url you wish to retreive in the `:id` parameter | ex. http://localhost:3000/api/v1/urls/3 will retrieve {"id":3,"Url":"http://bannanas.com", "shortUrl":"rOoPx", "createdAt":"2017-03-04T05:54:09.000Z", "updatedAt":"2017-03-04T06:48:18.000Z"}
 
