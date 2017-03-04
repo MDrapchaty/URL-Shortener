@@ -8,7 +8,7 @@ const url = require('../models/url');
 
 // POST - Create a shortened url
 
-router.post('/v1/urls', function(req, res){  //post runs this function which is activated on this route /v1/:url  
+router.post('/urls', function(req, res){  //post runs this function which is activated on this route /v1/:url  
 		
 		
 		function makeid() // random 5 digit string generater
@@ -34,13 +34,25 @@ router.post('/v1/urls', function(req, res){  //post runs this function which is 
 
 //Display all urls
 
-router.get('/v1/urls', (req, res) => {
+router.get('/urls', (req, res) => {
     url.findAll((err) => {
       res.status(500).json(err);
     }, (data) => {
       res.status(200).json(data);
-    });
+    })
   });
+
+ // get url by id
+  router.get('/urls/:id', (req, res) => {
+  	req.body.id = req.params.id;
+  	url.find(req.body, (err) => {
+  		res.status(500).json(err);
+  	}, (data) => {
+  		res.status(200).json(data);
+  	})
+  });
+
+
 
 return router;
 }

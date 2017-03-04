@@ -10,7 +10,7 @@ app.use(bodyParser.urlencoded({
 
 
 
-app.use('/api', require('../routes/api.js')(express));
+app.use('/api/v1', require('../routes/api.js')(express));
 
 exports.server = app.listen(3000, function(){
 	console.log('works on 3000.');

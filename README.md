@@ -29,6 +29,10 @@ Your CLI should give you the message indicating you are connected:
 
 ```works on 3000.```
 
+## **Starting Pont** ##
+ 
+```localhost:3000```
+
 ## **Endpoints**
 
 Use each method by Entering these URL endpoints in your search bar:
