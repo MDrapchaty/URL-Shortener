@@ -2,15 +2,6 @@ module.exports = function (express){
 var router = express.Router();
 const url = require('../models/url');
 
-
-  router.get('/status', (req, res) => {
-    res.json({
-      healthy: true,
-    });
-  });
-
-
-
 router.get('/:shortUrl', (req, res) => {
     const request = req;
     const response = res;
@@ -22,12 +13,6 @@ router.get('/:shortUrl', (req, res) => {
       response.redirect(data.Url);
     });
   });
-
-
-
-
-
-
 
 return router;
 }
