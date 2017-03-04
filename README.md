@@ -29,11 +29,11 @@ Your CLI should give you the message indicating you are connected:
 
 ```works on 3000.```
 
-## **Starting Point** ##
+## **Starting Point** 
  
-```localhost:3000```
+``` localhost:3000 ```
 
-## **Endpoints** ##
+## **Endpoints** 
 
 Use each method by Entering these URL endpoints in your search bar:
 
