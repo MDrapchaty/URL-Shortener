@@ -23,3 +23,24 @@ exports.find = (payload, err, success) => {
     }],
   }).then(success).catch(err);
 };
+
+// update by id
+exports.update = (payload, err, success) => {
+  db.url.find({
+    where: {
+      id: payload.id,
+    },
+  }).then((existingData) => {
+    existingData.updateAttributes(payload).then(success).catch(err);
+  }).catch(err);
+};
+
+// delete by id
+exports.destroy = (payload, err, success) => {
+  db.url.destroy({
+    where: {
+      id: payload.id,
+    },
+  }).then(success).catch(err);
+};
+

@@ -52,6 +52,26 @@ router.get('/urls', (req, res) => {
   	})
   });
 
+  // delete url by id
+  router.delete('/urls/:id', (req, res) => {
+  	req.body.id = req.params.id;
+  	url.destroy(req.body, (err) => {
+  		res.status(500).json(err);
+  	}, (data) => {
+  		res.status(200).json(data);
+  	})
+  });
+
+   // update url by id
+  router.post('/urls/:id', (req, res) => {
+  	req.body.id = req.params.id;
+  	url.update(req.body, (err) => {
+  		res.status(500).json(err);
+  	}, (data) => {
+  		res.status(200).json(data);
+  	})
+  });
+
 
 
 return router;
