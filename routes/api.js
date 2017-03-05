@@ -6,11 +6,11 @@ const url = require('../models/url');
 //   ROUTES   //  
 
 
-// POST - Create a shortened url
+//Create a shortened url
 
 router.post('/urls', function(req, res){  //post runs this function which is activated on this route /v1/:url  
 		
-		
+		//function to make 5 digit short url
 		function makeid() // random 5 digit string generater
 		{
 		    var text = '';

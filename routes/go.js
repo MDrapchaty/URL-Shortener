@@ -1,7 +1,8 @@
 module.exports = function (express){
 var router = express.Router();
-const url = require('../models/url');
+const url = require('../models/url'); //require url model
 
+//route for retrieving original url from short url
 router.get('/:shortUrl', (req, res) => {
     const request = req;
     const response = res;
