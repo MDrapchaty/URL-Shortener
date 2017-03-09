@@ -1,7 +1,7 @@
 module.exports = function (express){
 var router = express.Router();
 const url = require('../models/url');
-
+const makeid = require('../lib/makeid')
 
 //   ROUTES   //  
 
@@ -9,20 +9,8 @@ const url = require('../models/url');
 //Create a shortened url
 
 router.post('/urls', function(req, res){  //post runs this function which is activated on this route /v1/:url  
-		
-		//function to make 5 digit short url
-		function makeid() // random 5 digit string generater
-		{
-		    var text = '';
-		    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";  //string containing every possible character for short url
-
-		    for( var i=0; i < 5; i++ )
-		        text += possible.charAt(Math.floor(Math.random() * possible.length));  // for loop to create 5 character string for short url
-
-		    return text;
-		}
-
-		req.body.shortUrl = makeid();  //generate new random 5 digit string, and assign it to shortUrl var
+	
+		req.body.shortUrl = makeid.makeid();  //generate new random 5 digit string, and assign it to shortUrl var
 		console.log(req.body);
 		url.create(req.body, (err) => {
 			res.status(500).json(err);
