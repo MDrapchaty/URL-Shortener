@@ -1,7 +1,8 @@
 module.exports = function (express){
-var router = express.Router();
+const router = express.Router();
 const url = require('../models/url');
 const makeid = require('../lib/makeid')
+const util = require('../lib/util');
 
 //   ROUTES   //  
 
@@ -15,7 +16,9 @@ router.post('/urls', function(req, res){  //post runs this function which is act
 		url.create(req.body, (err) => {
 			res.status(500).json(err);
 		}, (data) => {
-			res.status(200).json(data);
+			console.log('yes');
+      util.debug(success('Creation: Success! Added URL to database.', data));
+      res.status(200).json(data);
 		});
 	});
 		
