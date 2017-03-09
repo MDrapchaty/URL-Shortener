@@ -16,8 +16,8 @@ router.post('/urls', function(req, res){  //post runs this function which is act
 		url.create(req.body, (err) => {
 			res.status(500).json(err);
 		}, (data) => {
-			console.log('yes');
-      util.debug(success('Creation: Success! Added URL to database.', data));
+			console.log('yessir');
+      util.debug("You successfully created a shortened url", data);
       res.status(200).json(data);
 		});
 	});
