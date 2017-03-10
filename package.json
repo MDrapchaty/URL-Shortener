@@ -10,11 +10,18 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.0",
+    "dotenv": "^4.0.0",
+    "eslint-config-airbnb": "^14.1.0",
     "express": "^4.14.0",
     "mysql": "^2.13.0",
     "sequelize": "^3.30.2"
   },
   "devDependencies": {
-    "dotenv": "^4.0.0"
+    "dotenv": "^4.0.0",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0"
   }
 }
