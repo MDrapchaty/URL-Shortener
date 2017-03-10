@@ -1,7 +1,8 @@
 module.exports = function (express){
-var router = express.Router();
+const router = express.Router();
 const url = require('../models/url');
-
+const makeid = require('../lib/makeid')
+const util = require('../lib/util');
 
 //   ROUTES   //  
 
@@ -9,25 +10,15 @@ const url = require('../models/url');
 //Create a shortened url
 
 router.post('/urls', function(req, res){  //post runs this function which is activated on this route /v1/:url  
-		
-		//function to make 5 digit short url
-		function makeid() // random 5 digit string generater
-		{
-		    var text = '';
-		    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";  //string containing every possible character for short url
-
-		    for( var i=0; i < 5; i++ )
-		        text += possible.charAt(Math.floor(Math.random() * possible.length));  // for loop to create 5 character string for short url
-
-		    return text;
-		}
-
-		req.body.shortUrl = makeid();  //generate new random 5 digit string, and assign it to shortUrl var
+	
+		req.body.shortUrl = makeid.makeid();  //generate new random 5 digit string, and assign it to shortUrl var
 		console.log(req.body);
 		url.create(req.body, (err) => {
-			res.status(500).json(err);
+			util.debug("Create Short Url: Error! Failed to create shortened url.");
+      res.status(500).json(err);
 		}, (data) => {
-			res.status(200).json(data);
+      util.debug("Create Short Url: Success! Created shortened url.");
+      res.status(200).json(data);
 		});
 	});
 		
@@ -36,8 +27,10 @@ router.post('/urls', function(req, res){  //post runs this function which is act
 
 router.get('/urls', (req, res) => {
     url.findAll((err) => {
+      util.debug("Retrieve All Urls: Error! Failed to retrieve all urls.");
       res.status(500).json(err);
     }, (data) => {
+      util.debug("Retrieve All Urls: Success! Retrieved all urls.");
       res.status(200).json(data);
     })
   });
@@ -46,8 +39,10 @@ router.get('/urls', (req, res) => {
   router.get('/urls/:id', (req, res) => {
   	req.body.id = req.params.id;
   	url.find(req.body, (err) => {
+      util.debug("Retrieve Url: Error! Failed to retrieve url.");
   		res.status(500).json(err);
   	}, (data) => {
+      util.debug("Retrieve Url: Success! Retrieved url.");
   		res.status(200).json(data);
   	})
   });
@@ -56,8 +51,10 @@ router.get('/urls', (req, res) => {
   router.delete('/urls/:id', (req, res) => {
   	req.body.id = req.params.id;
   	url.destroy(req.body, (err) => {
+      util.debug("Delete Url: Error! Failed to delete url.");
   		res.status(500).json(err);
   	}, (data) => {
+      util.debug("Delete Url: Success! Deleted url.");
   		res.status(200).json(data);
   	})
   });
@@ -66,8 +63,10 @@ router.get('/urls', (req, res) => {
   router.post('/urls/:id', (req, res) => {
   	req.body.id = req.params.id;
   	url.update(req.body, (err) => {
+      util.debug("Update Url: Error! Failed to update url.");
   		res.status(500).json(err);
   	}, (data) => {
+      util.debug("Update Url: Success! Updated url.");
   		res.status(200).json(data);
   	})
   });

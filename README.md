@@ -29,6 +29,25 @@ Your CLI should give you the message indicating you are connected:
 
 ```works on 3000.```
 
+## **MySQL**
+
+Install a MySQL Database.
+
+
+## **Environmental Variables**
+
+```
+DB_NAME="your database name"
+DB_HOST="your host"
+DB_PORT="your port"
+DB_SCHEMA=mysql
+DB_USER="your username"
+DB_PASS="your password"
+```
+## **Debug Tool**
+
+By creating an Environment variable of ` DEBUG=true ` on your local machine, you will turn on the debbuger which will create a detailed log for all route activity in the `logs` folder. 
+
 ## **Starting Point** 
  
 ``` localhost:3000 ```
