@@ -65,3 +65,7 @@ POST | /api/vi/urls/:id | POST at this endpoint by entering the id of the url yo
 DELETE | /api/v1/urls/:id | DELETE a url by entering the id of the url you wish to remove in the `:id` paramter. | The selected url will be deleted
 GET | /go/:shortURL | You will be redirected to your original url by entering the short url in the `:shortURL` paramter | http://localhost:3000/go/DPYZk will redirect you to http://google.com
 
+
+## **Code Styling** 
+
+The code in this file is all styled using eslint-config-airbnb, you can install it locally on your machine and find the documentation for it here [eslint-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
