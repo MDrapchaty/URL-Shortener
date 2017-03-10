@@ -46,7 +46,7 @@ DB_PASS="your password"
 ```
 ## **Debug Tool**
 
-By creating an Environment variable of ` Debug=true ` on your local machine, you will turn on the debbuger which will create a detailed log for all route activity in the `logs` folder. 
+By creating an Environment variable of ` DEBUG=true ` on your local machine, you will turn on the debbuger which will create a detailed log for all route activity in the `logs` folder. 
 
 ## **Starting Point** 
  
