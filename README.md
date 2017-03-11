@@ -68,4 +68,4 @@ GET | /go/:shortURL | You will be redirected to your original url by entering th
 
 ## **Code Styling** 
 
-The code in this file is all styled using eslint-config-airbnb, you can install it locally on your machine and find the documentation for it here [eslint-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
+The code in this file is all styled using eslint-config-airbnb, if you wish to add to the code and keep it styled inthe same way you can install it locally on your machine and find the documentation for it here [eslint-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
