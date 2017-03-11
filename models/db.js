@@ -18,28 +18,23 @@ const sequelize = new Sequelize(
       min: 0,
       idle: 10000,
     },
-    
+
     logging: false,
   });
 
 
-//Defining a model 
+// Defining a model
 
-const url = sequelize.define('urls',{
-	Url: {
-		type: Sequelize.STRING,
-	},
-	shortUrl: {
-		type: Sequelize.STRING,
-	},
+const url = sequelize.define('urls', {
+  Url: {
+    type: Sequelize.STRING,
+  },
+  shortUrl: {
+    type: Sequelize.STRING,
+  },
 });
 
-//sequelize.authenticate();
-
+// sequelize.authenticate();
 sequelize.sync();
-
 exports.sequelize = sequelize;
 exports.url = url;
-
-
-

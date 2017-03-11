@@ -3,13 +3,13 @@ const db = require('./db');
 
 // add url
 exports.create = (payload, err, success) => {
-	db.url.create(payload).then(success).catch(err);
-}
+  db.url.create(payload).then(success).catch(err);
+};
 
-//find all
+// find all
 exports.findAll = (err, success) => {
-	db.url.findAll().then(success).catch(err);
-}
+  db.url.findAll().then(success).catch(err);
+};
 
 // find by id
 exports.find = (payload, err, success) => {
@@ -44,14 +44,14 @@ exports.destroy = (payload, err, success) => {
   }).then(success).catch(err);
 };
 
-//Find Original url
+// Find Original url
 exports.getUrl = (data, error, success) => {
   // find url based on short url
-  db.url.find({    
+  db.url.find({
     where: {
       shortUrl: data.shortUrl,
     },
   })
-  .then(success)    
-  .catch(error);   
-}; 
+  .then(success)
+  .catch(error);
+};
