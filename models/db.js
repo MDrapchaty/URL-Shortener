@@ -23,7 +23,6 @@ const sequelize = new Sequelize(
   });
 
 // Defining a model
-
 const url = sequelize.define('urls', {
   Url: {
     type: Sequelize.STRING,

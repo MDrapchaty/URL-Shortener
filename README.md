@@ -58,7 +58,10 @@ In order to use the built in unit testing, simply run `mocha` in your CLI.
 This will run a test for your database connection and every route and give a detailed report in your CLI. 
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6631e8df2e6260ffd837c93136db01e343647746
 ## **Starting Point** 
  
 ``` localhost:3000 ```
