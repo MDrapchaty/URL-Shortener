@@ -18,12 +18,12 @@ const sequelize = new Sequelize(
       min: 0,
       idle: 10000,
     },
-    
+
     logging: false,
   });
 
 
-//Defining a model 
+//Defining a model
 
 const url = sequelize.define('urls',{
 	Url: {
@@ -40,6 +40,3 @@ sequelize.sync();
 
 exports.sequelize = sequelize;
 exports.url = url;
-
-
-
