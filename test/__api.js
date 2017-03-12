@@ -1,7 +1,7 @@
 // const express = require('express');
 const expect = require('chai').expect;
 const request = require('supertest');
-// const db = require('../models/db');
+const db = require('../models/db');
 
 var server = require('../server.js');
 
