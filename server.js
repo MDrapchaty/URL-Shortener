@@ -15,10 +15,7 @@ app.use(bodyParser.urlencoded({
 app.use('/api/v1', require('./routes/api.js')(express));
 app.use('/go/', require('./routes/go.js')(express));
 
-<<<<<<< HEAD
 
-=======
->>>>>>> 6631e8df2e6260ffd837c93136db01e343647746
-module.exports = app.listen(3000, function(){
-	console.log('works on 3000.');
+module.exports = app.listen(3000, () => {
+  console.log('works on 3000.');
 });
