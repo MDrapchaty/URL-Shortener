@@ -9,15 +9,15 @@ URL-Shortener will allow you to take a long url and shorten it into a smaller 5 
 ## **Getting Started**
 
 * To get started download or clone URL-Shortener
-* Install [nodejs](https://nodejs.org/en/) 
-* Get [npm](https://www.npmjs.com/package/npm) to install your dependencies, In your CLI run the following command to install npm: 
+* Install [nodejs](https://nodejs.org/en/)
+* Get [npm](https://www.npmjs.com/package/npm) to install your dependencies, In your CLI run the following command to install npm:
 	* ``` curl -L https://www.npmjs.com/install.sh | sh  ```
 
-## URL-Shortener Dependencies 
+## URL-Shortener Dependencies
 
 ``` npm install ```
 
-(express, body-parser, mysql, sequelize)
+(express, body-parser, mysql, sequelize, chai, mocha, supertest)
 
 ## **Run Node**
 
@@ -46,13 +46,26 @@ DB_PASS="your password"
 ```
 ## **Debug Tool**
 
-By creating an Environment variable of ` DEBUG=true ` on your local machine, you will turn on the debbuger which will create a detailed log for all route activity in the `logs` folder. 
+By creating an Environment variable of ` DEBUG=true ` on your local machine, you will turn on the debbuger which will create a detailed log for all route activity in the `logs` folder.
 
-## **Starting Point** 
- 
+
+## **Unit Testing** ##
+
+Please make sure you have installed [mocha](https://www.npmjs.com/package/mocha) and [chai](https://www.npmjs.com/package/chai) using npm.
+
+In order to use the built in unit testing, simply run `mocha` in your CLI.
+
+This will run a test for your database connection and every route and give a detailed report in your CLI.
+
+
+## **Starting Point**
+
 ``` localhost:3000 ```
 
-## **Endpoints** 
+##
+
+
+## **Endpoints**
 
 Use each method by Entering these URL endpoints in your search bar:
 
@@ -66,6 +79,6 @@ DELETE | /api/v1/urls/:id | DELETE a url by entering the id of the url you wish 
 GET | /go/:shortURL | You will be redirected to your original url by entering the short url in the `:shortURL` paramter | http://localhost:3000/go/DPYZk will redirect you to http://google.com
 
 
-## **Code Styling** 
+## **Code Styling**
 
 The code in this file is all styled using eslint-config-airbnb, if you wish to add to the code and keep it styled inthe same way you can install it locally on your machine and find the documentation for it here [eslint-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
