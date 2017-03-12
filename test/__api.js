@@ -1,8 +1,10 @@
+const express = require('express');
 const expect = require('chai').expect;
 const request = require('supertest');
 const db = require('../models/db');
 const server = require('../server.js');
 const makeid = require('../lib/makeid');
+const app = express();
 
 
 // Testing .env matches datbase information
@@ -62,9 +64,26 @@ describe('API Routes', () => {
 	        const urls = res.body;
 	        // save one single url from the list to test on later
 	        this.url = urls[0]
+	        //console.log(this.url)
 	        expect(urls.length).to.be.above(0)
       })
     .end(done)
+    });
+
+it('GET url based on id', (done) => {
+      request(server)
+        .get('/api/v1/urls/' + this.url.id)
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .expect((res) => {
+         //console.log(res)
+         expect(this.url).to.have.property('id')
+         expect(this.url).to.have.property('Url')
+         expect(this.url).to.have.property('shortUrl')
+         expect(this.url).to.have.property('createdAt')
+         expect(this.url).to.have.property('updatedAt')
+        })
+      .end(done);
     });
 
 
