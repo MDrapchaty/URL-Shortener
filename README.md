@@ -48,6 +48,7 @@ DB_PASS="your password"
 
 By creating an Environment variable of ` DEBUG=true ` on your local machine, you will turn on the debbuger which will create a detailed log for all route activity in the `logs` folder. 
 
+
 ## **Unit Testing** ##
 
 Please make sure you have installed [mocha](https://www.npmjs.com/package/mocha) and [chai](https://www.npmjs.com/package/chai) using npm.
