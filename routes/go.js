@@ -1,9 +1,9 @@
-module.exports = function (express){
-var router = express.Router();
-const url = require('../models/url'); //require url model
+module.exports = (express) => {
+  const router = express.Router();
+  const url = require('../models/url'); // require url model
 
-//route for redirecting original url from short url
-router.get('/:shortUrl', (req, res) => {
+// route for redirecting original url from short url
+  router.get('/:shortUrl', (req, res) => {
     const request = req;
     const response = res;
     request.body.shortUrl = request.params.shortUrl;
@@ -15,5 +15,5 @@ router.get('/:shortUrl', (req, res) => {
     });
   });
 
-return router;
-}
+  return router;
+};

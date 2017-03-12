@@ -23,20 +23,22 @@ const sequelize = new Sequelize(
   });
 
 
+<<<<<<< HEAD
 //Defining a model
+=======
+// Defining a model
+>>>>>>> master
 
-const url = sequelize.define('urls',{
-	Url: {
-		type: Sequelize.STRING,
-	},
-	shortUrl: {
-		type: Sequelize.STRING,
-	},
+const url = sequelize.define('urls', {
+  Url: {
+    type: Sequelize.STRING,
+  },
+  shortUrl: {
+    type: Sequelize.STRING,
+  },
 });
 
-//sequelize.authenticate();
-
+// sequelize.authenticate();
 sequelize.sync();
-
 exports.sequelize = sequelize;
 exports.url = url;

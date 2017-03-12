@@ -48,6 +48,7 @@ DB_PASS="your password"
 
 By creating an Environment variable of ` DEBUG=true ` on your local machine, you will turn on the debbuger which will create a detailed log for all route activity in the `logs` folder. 
 
+
 ## **Unit Testing** ##
 
 Please make sure you have installed [mocha](https://www.npmjs.com/package/mocha) and [chai](https://www.npmjs.com/package/chai) using npm.
@@ -55,6 +56,7 @@ Please make sure you have installed [mocha](https://www.npmjs.com/package/mocha)
 In order to use the built in unit testing, simply run `mocha` in your CLI. 
 
 This will run a test for your database connection and every route and give a detailed report in your CLI. 
+
 
 
 ## **Starting Point** 
