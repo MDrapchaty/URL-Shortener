@@ -71,8 +71,6 @@ module.exports = (express) => {
   });
 
   return router;
-<<<<<<< HEAD
+
 };
-=======
-};
->>>>>>> master
+

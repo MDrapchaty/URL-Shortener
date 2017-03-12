@@ -22,12 +22,7 @@ const sequelize = new Sequelize(
     logging: false,
   });
 
-
-<<<<<<< HEAD
-//Defining a model
-=======
 // Defining a model
->>>>>>> master
 
 const url = sequelize.define('urls', {
   Url: {
