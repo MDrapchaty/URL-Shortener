@@ -62,21 +62,19 @@ describe('API Routes', () => {
 	      .expect('Content-Type', /json/)
 	      .expect((res) => {
 	        const urls = res.body;
-	        // save one single url from the list to test on later
+	        // save one single url from the list tfor later tests
 	        this.url = urls[0]
-	        //console.log(this.url)
 	        expect(urls.length).to.be.above(0)
       })
     .end(done)
     });
 
-it('GET url based on id', (done) => {
+it('GET /api/v1/urls/:id  Get url based on id', (done) => {
       request(server)
         .get('/api/v1/urls/' + this.url.id)
         .set('Accept', 'application/json')
         .expect('Content-Type', /json/)
         .expect((res) => {
-         //console.log(res)
          expect(this.url).to.have.property('id')
          expect(this.url).to.have.property('Url')
          expect(this.url).to.have.property('shortUrl')
@@ -87,6 +85,71 @@ it('GET url based on id', (done) => {
     });
 
 
+it('POST /api/v1/urls/:id  Update url based on id', (done) => {
+      const body = {
+		Url: 'http://google.com',
+		shortUrl: 'kL4v1'
+	  };
+      request(server)
+        .put('/api/v1/urls/' + this.url.id)
+        .send(body)
+        .expect((res) => {
+         expect(this.url).to.have.property('id')
+         expect(this.url).to.have.property('Url')
+         expect(this.url).to.have.property('shortUrl')
+         expect(this.url).to.have.property('createdAt')
+         expect(this.url).to.have.property('updatedAt')
+         //expect(this.url.createdAt).to.not.equal(this.url.updatedAt)
+        })
+      .end(done);
+    });
+
+
+
+/*      //ATTEMPTS AT UPDATE TESTING using .put
+
+//ATTEMPT 1
+it('POST /api/v1/urls/:id  Update url based on id', (done) => {
+      request(server)
+        .get('/api/v1/urls')
+        .set('Accept', 'application/json')
+        .expect('Content-Type', /json/)
+        .expect((res) => {
+        	request(server)
+        	.put('/api/v1/urls/' + this.url.id)
+        	.send({'Url': 'http://apple.com'})
+        	.expect((res) => {
+         expect(this.url).to.have.property('id')
+         expect(this.url).to.have.property('Url')
+         expect(this.url).to.have.property('shortUrl')
+         expect(this.url).to.have.property('createdAt')
+         expect(this.url).to.have.property('updatedAt')
+        })
+        	})
+      .end(done);
+    });
+
+
+
+ // ATTEMPT 2
+ it('POST /api/v1/urls/:id Update url based on id', (done) => {
+	const body = {
+		Url: 'http://google.com',
+		shortUrl: 'kL4v1'
+	};
+	request(server)
+		.put('/api/v1/urls/' + this.url.id)
+		.send(body)
+		.end(function(err,res) {
+			if (err) {
+				throw err;
+			}
+			// Should.js fluent syntax applied
+			// console.log(this.url.id)
+		});
+		done();
+	});
+*/
 
 });
 
