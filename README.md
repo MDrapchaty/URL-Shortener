@@ -17,7 +17,7 @@ URL-Shortener will allow you to take a long url and shorten it into a smaller 5 
 
 ``` npm install ```
 
-(express, body-parser, mysql, sequelize)
+(express, body-parser, mysql, sequelize, chai, mocha, supertest)
 
 ## **Run Node**
 
@@ -29,9 +29,40 @@ Your CLI should give you the message indicating you are connected:
 
 ```works on 3000.```
 
+## **MySQL**
+
+Install a MySQL Database.
+
+
+## **Environmental Variables**
+
+```
+DB_NAME="your database name"
+DB_HOST="your host"
+DB_PORT="your port"
+DB_SCHEMA=mysql
+DB_USER="your username"
+DB_PASS="your password"
+```
+## **Debug Tool**
+
+By creating an Environment variable of ` DEBUG=true ` on your local machine, you will turn on the debbuger which will create a detailed log for all route activity in the `logs` folder. 
+
+## **Unit Testing** ##
+
+Please make sure you have installed [mocha](https://www.npmjs.com/package/mocha) and [chai](https://www.npmjs.com/package/chai) using npm.
+
+In order to use the built in unit testing, simply run `mocha` in your CLI. 
+
+This will run a test for your database connection and every route and give a detailed report in your CLI. 
+
+
 ## **Starting Point** 
  
 ``` localhost:3000 ```
+
+##
+
 
 ## **Endpoints** 
 
@@ -46,3 +77,7 @@ POST | /api/vi/urls/:id | POST at this endpoint by entering the id of the url yo
 DELETE | /api/v1/urls/:id | DELETE a url by entering the id of the url you wish to remove in the `:id` paramter. | The selected url will be deleted
 GET | /go/:shortURL | You will be redirected to your original url by entering the short url in the `:shortURL` paramter | http://localhost:3000/go/DPYZk will redirect you to http://google.com
 
+
+## **Code Styling** 
+
+The code in this file is all styled using eslint-config-airbnb, if you wish to add to the code and keep it styled inthe same way you can install it locally on your machine and find the documentation for it here [eslint-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
