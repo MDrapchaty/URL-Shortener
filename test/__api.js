@@ -54,7 +54,7 @@ describe('API Routes', () => {
     });
 
 
-	// GET all urls 
+	// retrieve all urls 
 	it('GET /api/v1/urls Returns all urls', (done) => {
       request(server)
 	      .get('/api/v1/urls')
@@ -69,7 +69,8 @@ describe('API Routes', () => {
     .end(done)
     });
 
-it('GET /api/v1/urls/:id  Get url based on id', (done) => {
+    // Get url based on id
+	it('GET /api/v1/urls/:id  Get url based on id', (done) => {
       request(server)
         .get('/api/v1/urls/' + this.url.id)
         .set('Accept', 'application/json')
@@ -84,8 +85,9 @@ it('GET /api/v1/urls/:id  Get url based on id', (done) => {
       .end(done);
     });
 
+	// Update url based on id
 
-it('POST /api/v1/urls/:id  Update url based on id', (done) => {
+	it('POST /api/v1/urls/:id  Update url based on id', (done) => {
       const body = {
 		Url: 'http://google.com',
 		shortUrl: 'kL4v1'
@@ -104,9 +106,23 @@ it('POST /api/v1/urls/:id  Update url based on id', (done) => {
       .end(done);
     });
 
+	
+
+    // Delete url based on id
+	it('DELETE deletes one URL based on id', (done) => {
+	      request(server)
+	      .get('/api/v1/urls' + this.url.id)
+	      .set('Accept', 'application/json')
+	      .expect('Content-Type', /json/);
+	      app.delete('/api/v1/urls/' + this.url.id, (req, res) => {
+	        res.status(200);
+	      })
+	      done();
+	   
+    });
 
 
-/*      //ATTEMPTS AT UPDATE TESTING using .put
+/*      //ATTEMPTS AT UPDATE TESTING using .send
 
 //ATTEMPT 1
 it('POST /api/v1/urls/:id  Update url based on id', (done) => {
@@ -149,6 +165,21 @@ it('POST /api/v1/urls/:id  Update url based on id', (done) => {
 		});
 		done();
 	});
+
+
+// ATTEMPT 3
+it('UPDATE updates one URL based on id', (done) => {
+	      request(server)
+	      .get('/api/v1/urls' + this.url.id)
+	      .set('Accept', 'application/json')
+	      .expect('Content-Type', /json/)
+	      app.update('/api/v1/urls/' + this.url.id, (req, res) => {
+	        res.status(200);
+	      })
+	      done();
+	    });
+
+
 */
 
 });
