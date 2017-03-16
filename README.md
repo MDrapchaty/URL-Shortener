@@ -17,7 +17,7 @@ URL-Shortener will allow you to take a long url and shorten it into a smaller 5 
 
 ``` npm install ```
 
-(express, body-parser, mysql, sequelize, chai, mocha, supertest)
+(express, body-parser, mysql, sequelize, chai, mocha, supertest, drapdebug)
 
 ## **Run Node**
 
