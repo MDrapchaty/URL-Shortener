@@ -2,7 +2,7 @@ module.exports = (express) => {
   const router = express.Router();
   const url = require('../models/url');
   const makeid = require('../lib/makeid');
-  const util = require('../lib/util');
+  const util = require('drapdebug');
 
 //   ROUTES   //
 
