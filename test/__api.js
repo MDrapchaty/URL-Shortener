@@ -1,3 +1,4 @@
+/* global afterEach */
 const express = require('express');
 const expect = require('chai').expect;
 const request = require('supertest');
@@ -23,8 +24,6 @@ describe('Database', () => {
 
 // Testing for api routes
 describe('API Routes', () => {
-  /* eslint no-undef: "error"*/
-  /* eslint-env node*/
   afterEach(() => {
     server.close();
   });
