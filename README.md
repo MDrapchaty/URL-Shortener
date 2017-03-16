@@ -46,7 +46,7 @@ DB_PASS="your password"
 ```
 ## **Debug Tool**
 
-By creating an Environment variable of ` DEBUG=true ` on your local machine, you will turn on the debbuger which will create a detailed log for all route activity in the `logs` folder.
+If you would to use the debug tool to create detailed logs for all your API's and database connection settings install and see documentation for [drapdebug](https://github.com/MDrapchaty/drapdebug) 
 
 
 ## **Unit Testing** ##
