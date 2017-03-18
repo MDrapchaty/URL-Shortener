@@ -22,6 +22,8 @@ const sequelize = new Sequelize(
     logging: false,
   });
 
+sequelize.authenticate();
+
 // Defining a model
 const url = sequelize.define('urls', {
   Url: {
@@ -32,7 +34,7 @@ const url = sequelize.define('urls', {
   },
 });
 
-// sequelize.authenticate();
+
 sequelize.sync();
 exports.sequelize = sequelize;
 exports.url = url;
