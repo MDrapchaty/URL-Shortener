@@ -16,7 +16,7 @@ app.use('/api/v1', require('./routes/api.js')(express));
 app.use('/go/', require('./routes/go.js')(express));
 
 
-var port = process.env.DB_PORT;
+const port = process.env.PORT;
 
 module.exports = app.listen(port, () => {
   console.log('works on 3000.' );
