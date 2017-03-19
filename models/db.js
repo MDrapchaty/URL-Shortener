@@ -15,7 +15,7 @@ const sequelize = new Sequelize(
     // Set the max and min connections and maximum idle time.
     pool: {
       max: 5,
-      min: 0,
+      min: 1,
       idle: 10000,
     },
     logging: false,
