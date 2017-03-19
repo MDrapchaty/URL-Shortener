@@ -76,12 +76,36 @@ POST | /api/vi/urls/:id | POST at this endpoint by entering the id of the url yo
 DELETE | /api/v1/urls/:id | DELETE a url by entering the id of the url you wish to remove in the `:id` paramter. | The selected url will be deleted
 GET | /go/:shortURL | You will be redirected to your original url by entering the short url in the `:shortURL` paramter | http://localhost:3000/go/DPYZk will redirect you to http://google.com
 
-
-## Deployment Process
-
-...
-
-
 ## **Code Styling**
 
 The code in this file is all styled using eslint-config-airbnb, if you wish to add to the code and keep it styled inthe same way you can install it locally on your machine and find the documentation for it here [eslint-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
+
+
+# Workflow
+
+## Feature Branches
+When adding s apecific features to this application, it is recommended to use a feature branch workflow. To do this:
+* `git checkout master` - Make sure you are currently on the master branch.
+* `git pull` - Pull from Github
+* `git branch <feature-name>` - Create a new feature branch with the feature name of your choice.
+* `git checkout <feature-name>` - Switch to the feauture branch you just made.
+* Make your changes to code.
+* Commit and push any from your `<feature-name>` branch in your CLI .
+* Create a pull request for your feature into the master branch.
+
+##Versioning
+When making changes to the application, [semantic versioning](http://semver.org/) should be used, you can find the documentation for semantic versioning [here](http://semver.org/).
+
+
+## Deployment Process
+
+### Staging
+
+By Pushing to the `release` branch you can deploy your code changes directly to the drap-url-shortener-staging app on [heroku](https://www.heroku.com/).
+
+Codeship CI will automatically run the automated tests, and if all tests are passing will implement the code directly to the staging application. 
+
+##Production
+
+If the code runs as it should in staging app, it will be passed through the drap-url-shortener pipeline on heroku to the production app.
+
