@@ -16,8 +16,8 @@ app.use('/api/v1', require('./routes/api.js')(express));
 app.use('/go/', require('./routes/go.js')(express));
 
 
-const port = process.env.PORT;
+const port = process.env.PORT || 3000;
 
 module.exports = app.listen(port, () => {
-  console.log('works on 3000.' );
+  console.log('works on ', port);
 });
