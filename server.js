@@ -15,7 +15,7 @@ app.use(bodyParser.urlencoded({
 app.use('/api/v1', require('./routes/api.js')(express));
 app.use('/go/', require('./routes/go.js')(express));
 
-
+// create port var to be dynamic for deployment
 const port = process.env.PORT || 3000;
 
 module.exports = app.listen(port, () => {
