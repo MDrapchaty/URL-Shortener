@@ -62,8 +62,6 @@ This will run a test for your database connection and every route and give a det
 
 ``` localhost:3000 ```
 
-##
-
 
 ## **Endpoints**
 
@@ -77,6 +75,11 @@ GET | /api/v1/urls/:id | Enter the id of the url you wish to retreive in the `:i
 POST | /api/vi/urls/:id | POST at this endpoint by entering the id of the url you wish to update in the 1:id1 parameter | Any info changed will result in a permanent change to the data in the database
 DELETE | /api/v1/urls/:id | DELETE a url by entering the id of the url you wish to remove in the `:id` paramter. | The selected url will be deleted
 GET | /go/:shortURL | You will be redirected to your original url by entering the short url in the `:shortURL` paramter | http://localhost:3000/go/DPYZk will redirect you to http://google.com
+
+
+## Deployment Process
+
+...
 
 
 ## **Code Styling**
