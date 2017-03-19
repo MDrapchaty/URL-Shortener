@@ -6,6 +6,12 @@ module.exports = (express) => {
 
 //   ROUTES   //
 
+
+  router.get('/status', function(req, res){
+      res.json({healthy: true})
+  });
+
+
 // Create a shortened url
 
   router.post('/urls', (req, res) => {
