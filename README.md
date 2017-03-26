@@ -2,24 +2,22 @@
 
 This documentation will help you use the url shortener application, created with nodejs and express by Matt Drapchaty.
 
-## **What does it do?**
+URL-Shortener will allow you to take a long url and shorten it into a smaller 5 digit url. This shortened URL can be used to link back to your original URL.
 
-URL-Shortener will allow you to take a long url and shorten it into a smaller 5 digit url
-
-## **Getting Started**
+## **Getting Started** ##
 
 * To get started download or clone URL-Shortener
 * Install [nodejs](https://nodejs.org/en/)
 * Get [npm](https://www.npmjs.com/package/npm) to install your dependencies, In your CLI run the following command to install npm:
 	* ``` curl -L https://www.npmjs.com/install.sh | sh  ```
 
-## URL-Shortener Dependencies
+## URL-Shortener Dependencies ##
 
 ``` npm install ```
 
 (express, body-parser, mysql, sequelize, chai, mocha, supertest, drapdebug)
 
-## **Run Node**
+## **Run Node** ##
 
 Traverse to URL-Shortener in your CLI and run the following:
 
@@ -29,12 +27,12 @@ Your CLI should give you the message indicating you are connected:
 
 ```works on 3000.```
 
-## **MySQL**
+## **MySQL** ##
 
 Install a MySQL Database.
 
 
-## **Environmental Variables**
+### **Environmental Variables** ###
 
 ```
 DB_NAME="your database name"
@@ -46,7 +44,7 @@ DB_PASS="your password"
 ```
 ## **Debug Tool**
 
-If you would to use the debug tool to create detailed logs for all your API's and database connection settings install and see documentation for [drapdebug](https://github.com/MDrapchaty/drapdebug) 
+If you would to use the debug tool to create detailed logs for all your API's and database connection settings install and see documentation for [drapdebug](https://github.com/MDrapchaty/drapdebug)
 
 
 ## **Unit Testing** ##
@@ -63,7 +61,7 @@ This will run a test for your database connection and every route and give a det
 ``` localhost:3000 ```
 
 
-## **Endpoints**
+## **Endpoints** ##
 
 Use each method by Entering these URL endpoints in your search bar:
 
@@ -81,9 +79,9 @@ GET | /go/:shortURL | You will be redirected to your original url by entering th
 The code in this file is all styled using eslint-config-airbnb, if you wish to add to the code and keep it styled inthe same way you can install it locally on your machine and find the documentation for it here [eslint-airbnb](https://www.npmjs.com/package/eslint-config-airbnb)
 
 
-# Workflow
+## Workflow ##
 
-## Feature Branches
+### Feature Branches ###
 When adding s apecific features to this application, it is recommended to use a feature branch workflow. To do this:
 * `git checkout master` - Make sure you are currently on the master branch.
 * `git pull` - Pull from Github
@@ -93,9 +91,56 @@ When adding s apecific features to this application, it is recommended to use a 
 * Commit and push any from your `<feature-name>` branch in your CLI .
 * Create a pull request for your feature into the master branch.
 
-##Versioning
+## Versioning ##
+
+You may make automated version updates or `Version Bump` the application, as well as use automated git commands such as `add`, `commit`, and `push` to git using [gulp](http://gulpjs.com/), with [gulp-git](https://www.npmjs.com/package/gulp-git)
+
+### Semantic Versioning ###
+
 When making changes to the application, [semantic versioning](http://semver.org/) should be used, you can find the documentation for semantic versioning [here](http://semver.org/).
 
+### Gulp Install ###
+
+Make sure the following are in your dev dependencies. You must also have `drapdebug` installed to your app, the version bumping tool is in here.
+
+In addition, make sure you run `npm install -g gulp` in your CLI to install globally so the cli gulp commands will work.
+
+```
+    "gulp": "^3.9.1",
+    "gulp-git": "^2.1.0",
+    "gulp-gitignore": "^0.1.0",
+    "run-sequence": "^1.2.2",
+    "yargs": "^7.0.2"
+```
+### Gulp Usage ###
+
+Once you have these dependencies installed you can now run the following commands in your CLI.
+
+#### Version Bump  ####
+
+`gulp verBump -r "patch" | "minor" | "major"`
+
+Note: `-r "minor"` or the like is needed to properly tell the tool what kind of update to make to version.
+
+#### Git Add All ####
+
+`gulp add`
+
+#### Git Commit -m "commit message" ####
+
+`gulp commit -m "commit message"`
+
+Note: `-m "commit message"` allows you to enter a commit message. Otherwise, a defualt commit message will be used.
+
+#### Git Commit Add & Commit ####
+
+`gulp addCommit -m "commit message"`
+
+#### Git Push ####
+
+`gulp push`
+
+Note: This will push to your origin, master branch.
 
 ## Deployment Process
 
@@ -103,9 +148,8 @@ When making changes to the application, [semantic versioning](http://semver.org/
 
 By Pushing to the `release` branch you can deploy your code changes directly to the drap-url-shortener-staging app on [heroku](https://www.heroku.com/).
 
-Codeship CI will automatically run the automated tests, and if all tests are passing will implement the code directly to the staging application. 
+Codeship CI will automatically run the automated tests, and if all tests are passing will implement the code directly to the staging application.
 
 ##Production
 
 If the code runs as it should in staging app, it will be passed through the drap-url-shortener pipeline on heroku to the production app.
-
