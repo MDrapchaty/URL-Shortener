@@ -10,7 +10,7 @@ const sequelize = new Sequelize(
   process.env.DB_USER,
   process.env.DB_PASS, {
     host: process.env.DB_HOST,    // Set the host.
-    dialect: process.env.DB_SCHEMA,    // Set the dialect.
+    dialect: 'mysql',//process.env.DB_SCHEMA,    // Set the dialect.
     port: process.env.DB_PORT,    // Set the port.
     // Set the max and min connections and maximum idle time.
     pool: {
