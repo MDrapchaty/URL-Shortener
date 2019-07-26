@@ -42,6 +42,8 @@ DB_SCHEMA=mysql
 DB_USER="your username"
 DB_PASS="your password"
 ```
+If you want to learn more about Environmental Variables you can do so here: https://www.npmjs.com/package/dotenv 
+
 ## **Debug Tool**
 
 If you would to use the debug tool to create detailed logs for all your API's and database connection settings install and see documentation for [drapdebug](https://github.com/MDrapchaty/drapdebug)
